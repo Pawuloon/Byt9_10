@@ -1,29 +1,28 @@
-﻿namespace Byt9_10;
+﻿namespace Byt9_10.Interfaces;
 
-public class ChatList : ISavedList
+public interface ISavedList
 {
     public int Id { get; set; }
-
-    public ChatList(int id)
-    {
-        Id = id;
-    }
-
+    
+    // delete method
     public void Delete()
     {
         // PLACEHOLDER
     }
 
+    // add method
     public void Add()
+    {
+        // PLACEHOLDER    
+    }
+    
+    // Export method
+    public void Export()
     {
         // PLACEHOLDER
     }
 
-    public void Export()
-    {
-        // PLACEHOLDER;
-    }
-
+    // Open method
     public void Open()
     {
         // PLACEHOLDER

@@ -1,10 +1,12 @@
-﻿namespace Byt9_10;
+﻿using Byt9_10.Interfaces;
 
-public class SavedDefinitionList : ISavedList
+namespace Byt9_10.Lists;
+
+public class FriendsList : ISavedList
 {
     public int Id { get; set; }
 
-    public SavedDefinitionList(int id)
+    public FriendsList(int id)
     {
         Id = id;
     }
@@ -25,6 +27,16 @@ public class SavedDefinitionList : ISavedList
     }
 
     public void Open()
+    {
+        // PLACEHOLDER
+    }
+    
+    public void AddFriend()
+    {
+        // PLACEHOLDER
+    }
+    
+    public void RemoveFriend()
     {
         // PLACEHOLDER
     }

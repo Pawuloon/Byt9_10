@@ -1,4 +1,4 @@
-﻿namespace Byt9_10;
+﻿namespace Byt9_10.Models;
 
 public class User
 {
