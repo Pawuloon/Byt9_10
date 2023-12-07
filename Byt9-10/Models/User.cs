@@ -1,18 +1,27 @@
-﻿namespace Byt9_10.Models;
+﻿using Byt9_10.Lists;
+
+namespace Byt9_10.Models;
 
 public class User
 {
     public string Username { get; set; }
     public string Password { get;set; }
     public string CurrentLang { get;set; }
+    public SavedDefinitionList DefinitionList { get; set; }
+    public FriendsList FriendsList { get; set; }
+    public ChatList ChatList { get; set; }
 
-    public User(string username, string password, string currentLang)
+
+    public User(string username, string password, string currentLang, SavedDefinitionList definitionList, FriendsList friendsList, ChatList chatList)
     {
         Username = username;
         Password = password;
         CurrentLang = currentLang;
+        DefinitionList = definitionList;
+        FriendsList = friendsList;
+        ChatList = chatList;
     }
-    
+
     // Login method
     public void Login(string username, string password)
     {
