@@ -51,4 +51,10 @@ public class User
     {
         // PLACEHOLDER
     }
+
+    // ToString method
+    public override string ToString()
+    {
+        return Username + " " + Password + " " + CurrentLang;
+    }
 }

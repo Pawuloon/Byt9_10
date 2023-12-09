@@ -2,6 +2,10 @@
 
 namespace Byt9_10.Lists;
 
+
+/// <summary>
+/// The FriendsList class is a list of friends of the user`
+/// </summary>
 public class FriendsList : ISavedList
 {
     public int Id { get; set; }
