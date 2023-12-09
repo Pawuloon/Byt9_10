@@ -3,6 +3,9 @@ using Byt9_10.Models;
 
 namespace Byt9_10.Lists;
 
+/// <summary>
+/// The SavedDefinitionList class is a list of definitions saved by the user
+/// </summary>
 public class SavedDefinitionList : ISavedList
 {
     public int Id { get; set; }
