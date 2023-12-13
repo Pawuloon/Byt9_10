@@ -1,7 +1,5 @@
 using Byt9_10.Lists;
 using Byt9_10.Models;
-using Xunit;
-using Assert = NUnit.Framework.Assert;
 
 namespace Byt9_10.tests.ListsTests;
 
@@ -23,7 +21,7 @@ public class ChatListTests
         var actual = _chatList.Id;
 
         // assert
-        Assert.Equals(expected, actual);
+        Assert.Equal(expected, actual);
     }
 
     [Fact]
@@ -36,6 +34,6 @@ public class ChatListTests
         var actual = _chatList.Conversations;
 
         // assert
-        Assert.Equals(expected, actual);
+        Assert.Equal(expected, actual);
     }
 }

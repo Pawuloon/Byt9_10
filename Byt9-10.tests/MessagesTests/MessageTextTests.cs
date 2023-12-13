@@ -1,8 +1,6 @@
 ﻿using Byt9_10.Lists;
 using Byt9_10.Messages;
 using Byt9_10.Models;
-using Xunit;
-using Assert = NUnit.Framework.Assert;
 
 namespace Byt9_10.tests.MessagesTests;
 
@@ -29,7 +27,7 @@ public class MessageTextTests
         var actual = _messageText.Text;
         
         // assert
-        Assert.Equals(expected, actual);
+        Assert.Equal(expected, actual);
     }
     
     [Fact]
@@ -42,7 +40,7 @@ public class MessageTextTests
         var actual = _messageText.Sender.Username;
         
         // assert
-        Assert.Equals(expected, actual);
+        Assert.Equal(expected, actual);
     }
     
     [Fact]
@@ -55,7 +53,7 @@ public class MessageTextTests
         var actual = _messageText.TimeStamp;
         
         // assert
-        Assert.Equals(expected, actual);
+        Assert.Equal(expected, actual);
     }
     
     [Fact]
@@ -68,7 +66,7 @@ public class MessageTextTests
         var actual = _messageText.IsSent;
         
         // assert
-        Assert.Equals(expected, actual);
+        Assert.Equal(expected, actual);
     }
     
     [Fact]
@@ -81,7 +79,7 @@ public class MessageTextTests
         var actual = _messageText.Id;
         
         // assert
-        Assert.Equals(expected, actual);
+        Assert.Equal(expected, actual);
     }
     
     [Fact]
@@ -94,7 +92,7 @@ public class MessageTextTests
         _messageText.Text = expected;
         
         // assert
-        Assert.Equals(expected, _messageText.Text);
+        Assert.Equal(expected, _messageText.Text);
     }
     
     [Fact]
@@ -108,7 +106,7 @@ public class MessageTextTests
         var actual = _messageText.Sender.Username;
 
         // assert
-        Assert.Equals(expected, actual);
+        Assert.Equal(expected, actual);
     }
     
     [Fact]
@@ -122,7 +120,7 @@ public class MessageTextTests
         var actual = _messageText.TimeStamp;
 
         // assert
-        Assert.Equals(expected, actual);
+        Assert.Equal(expected, actual);
     }
     
     [Fact]
@@ -136,7 +134,7 @@ public class MessageTextTests
         var actual = _messageText.IsSent;
 
         // assert
-        Assert.Equals(expected, actual);
+        Assert.Equal(expected, actual);
     }
     
     [Fact]
@@ -150,6 +148,6 @@ public class MessageTextTests
         var actual = _messageText.Id;
 
         // assert
-        Assert.Equals(expected, actual);
+        Assert.Equal(expected, actual);
     }
 }

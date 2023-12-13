@@ -1,6 +1,4 @@
 using Byt9_10.Lists;
-using Xunit;
-using Assert = NUnit.Framework.Assert;
 
 namespace Byt9_10.tests.ListsTests;
 
@@ -17,12 +15,12 @@ public class FriendListTests
     public void GetFriendListIdTest()
     {
         // arrange
-        var expected = 1;
+        const int expected = 1;
 
         // act
         var actual = _friendsList.Id;
 
         // assert
-        Assert.Equals(expected, actual);
+        Assert.Equal(expected, actual);
     }
 }
