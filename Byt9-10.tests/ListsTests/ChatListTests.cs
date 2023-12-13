@@ -1,25 +1,41 @@
 using Byt9_10.Lists;
 using Byt9_10.Models;
+using Xunit;
+using Assert = NUnit.Framework.Assert;
 
 namespace Byt9_10.tests.ListsTests;
 
 /// <summary>
 /// Tests for the ChatList class
 /// </summary>
+[Trait("ListTests", "Unit")]
 public class ChatListTests
 {
-    private ChatList _chatList = new(1, new List<Conversation>());
+    private readonly ChatList _chatList = new(1, new List<Conversation>());
     
-    [Test]
+    [Fact]
     public void GetChatListIdTest()
     {
-        Console.WriteLine(_chatList.Id);
+        // arrange
+        const int expected = 1;
+
+        // act
+        var actual = _chatList.Id;
+
+        // assert
+        Assert.Equals(expected, actual);
     }
-    
-    [Test]
+
+    [Fact]
     public void GetChatListConversationsTest()
     {
-        Console.WriteLine(_chatList.Conversations);
+        // arrange
+        List<Conversation> expected = new();
+
+        // act
+        var actual = _chatList.Conversations;
+
+        // assert
+        Assert.Equals(expected, actual);
     }
-    
 }

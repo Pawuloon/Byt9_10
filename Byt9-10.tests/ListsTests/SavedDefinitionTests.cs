@@ -1,25 +1,41 @@
 using Byt9_10.Lists;
 using Byt9_10.Models;
+using Xunit;
 
 namespace Byt9_10.tests.ListsTests;
 
 /// <summary>
 /// Tests for the SavedDefinition class
 /// </summary>
+[Trait("ListTests", "Unit")]
 public class SavedDefinitionTests
 {
-    private SavedDefinitionList _savedDefinitionList = new SavedDefinitionList(1, new List<Definition>());
+    private readonly SavedDefinitionList _savedDefinitionList = new(1, new List<Definition>());
     
-    [Test]
+    [Fact]
     public void GetSavedDefinitionListIdTest()
     {
-        Console.WriteLine(_savedDefinitionList.Id);
+        // arrange
+        const int expected = 1;
+
+        // act
+        var actual = _savedDefinitionList.Id;
+
+        // assert
+        Assert.Equal(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void GetSavedDefinitionListDefinitionsTest()
     {
-        Console.WriteLine(_savedDefinitionList.Definitions);
+        // arrange
+        List<Definition> expected = new();
+
+        // act
+        var actual = _savedDefinitionList.Definitions;
+
+        // assert
+        Assert.Equal(expected, actual);
     }
     
 }

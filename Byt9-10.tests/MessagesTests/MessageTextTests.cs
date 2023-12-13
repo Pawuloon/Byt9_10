@@ -1,12 +1,15 @@
 ﻿using Byt9_10.Lists;
 using Byt9_10.Messages;
 using Byt9_10.Models;
+using Xunit;
+using Assert = NUnit.Framework.Assert;
 
 namespace Byt9_10.tests.MessagesTests;
 
 /// <summary>
 /// Tests for the MessageText class
 /// </summary>
+[Trait("MessageTests", "Unit")]
 public class MessageTextTests
 {
     private static readonly User User = new ("test", "test", "test", 
@@ -16,86 +19,85 @@ public class MessageTextTests
     
     private readonly MessageText _messageText = new(1, User, new DateTime().Date, true, "test");
     
-    [Test]
+    [Fact]
     public void GetMessagesTextTest()
     {
         // arrange
         const string expected = "test";
-
+        
         // act
         var actual = _messageText.Text;
-
+        
         // assert
         Assert.Equals(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void GetMessagesSenderTest()
     {
         // arrange
         const string expected = "test";
-
+        
         // act
         var actual = _messageText.Sender.Username;
-
+        
         // assert
         Assert.Equals(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void GetMessagesDateTest()
     {
         // arrange
-        var expected = new DateTime().Date;
-
+        DateTime expected = new();
+        
         // act
         var actual = _messageText.TimeStamp;
-
+        
         // assert
         Assert.Equals(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void GetMessagesIsSentTest()
     {
         // arrange
         const bool expected = true;
-
+        
         // act
         var actual = _messageText.IsSent;
-
+        
         // assert
         Assert.Equals(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void GetMessagesId()
     {
         // arrange
         const int expected = 1;
-
+        
         // act
         var actual = _messageText.Id;
-
+        
         // assert
         Assert.Equals(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void SetMessagesTextTest()
     {
         // arrange
         const string expected = "test";
-
+        
         // act
-        _messageText.Text = "test";
-        var actual = _messageText.Text;
-
+        _messageText.Text = expected;
+        
         // assert
-        Assert.Equals(expected, actual);
+        Assert.Equals(expected, _messageText.Text);
     }
     
-    [Test]
+    [Fact]
     public void SetMessagesSenderTest()
     {
         // arrange
@@ -109,7 +111,7 @@ public class MessageTextTests
         Assert.Equals(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void SetMessagesDateTest()
     {
         // arrange
@@ -123,7 +125,7 @@ public class MessageTextTests
         Assert.Equals(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void SetMessagesIsSentTest()
     {
         // arrange
@@ -137,7 +139,7 @@ public class MessageTextTests
         Assert.Equals(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void SetMessagesId()
     {
         // arrange
