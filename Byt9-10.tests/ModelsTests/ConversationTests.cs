@@ -6,28 +6,49 @@ namespace Byt9_10.tests.ModelsTests;
 /// <summary>
 /// Tests for the Conversation class
 /// </summary>
+[Trait("ModelTests", "Unit")]
 public class ConversationTests
 {
-    private Conversation _conversation = new(1,
+    private readonly Conversation _conversation = new(1,
         new List<MessageText>(),
         new List<MessageVoice>());
     
-    [Test]
+    [Fact]
     public void GetConversationIdTest()
     {
-        Console.WriteLine(_conversation.Id);
+        // arrange
+        const int expected = 1;
+
+        // act
+        var actual = _conversation.Id;
+
+        // assert
+        Assert.Equal(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void GetConversationTextMessagesTest()
     {
-        Console.WriteLine(_conversation.TextMessages);
+        // arrange
+        List<MessageText> expected = new();
+
+        // act
+        var actual = _conversation.TextMessages;
+
+        // assert
+        Assert.Equal(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void GetConversationVoiceMessagesTest()
     {
-        Console.WriteLine(_conversation.VoiceMessages);
-    }
-    
+        // arrange
+        List<MessageVoice> expected = new();
+
+        // act
+        var actual = _conversation.VoiceMessages;
+
+        // assert
+        Assert.Equal(expected, actual);
+    }   
 }

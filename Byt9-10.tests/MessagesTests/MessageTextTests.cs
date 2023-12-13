@@ -7,6 +7,7 @@ namespace Byt9_10.tests.MessagesTests;
 /// <summary>
 /// Tests for the MessageText class
 /// </summary>
+[Trait("MessageTests", "Unit")]
 public class MessageTextTests
 {
     private static User _user = new ("test", "test", "test", 
@@ -16,69 +17,134 @@ public class MessageTextTests
     
     private MessageText _messageText = new(1, _user, new DateTime().Date, true, "test");
     
-    [Test]
+    [Fact]
     public void GetMessagesTextTest()
     {
-        Console.WriteLine(_messageText.Text);
+        // arrange
+        const string expected = "test";
+        
+        // act
+        var actual = _messageText.Text;
+        
+        // assert
+        Assert.Equal(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void GetMessagesSenderTest()
     {
-        Console.WriteLine(_messageText.Sender);
+        // arrange
+        const string expected = "test";
+        
+        // act
+        var actual = _messageText.Sender.Username;
+        
+        // assert
+        Assert.Equal(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void GetMessagesDateTest()
     {
-        Console.WriteLine(_messageText.TimeStamp);
+        // arrange
+        DateTime expected = new();
+        
+        // act
+        var actual = _messageText.TimeStamp;
+        
+        // assert
+        Assert.Equal(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void GetMessagesIsSentTest()
     {
-        Console.WriteLine(_messageText.IsSent);
+        // arrange
+        const bool expected = true;
+        
+        // act
+        var actual = _messageText.IsSent;
+        
+        // assert
+        Assert.Equal(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void GetMessagesId()
     {
-        Console.WriteLine(_messageText.Id);
+        // arrange
+        const int expected = 1;
+        
+        // act
+        var actual = _messageText.Id;
+        
+        // assert
+        Assert.Equal(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void SetMessagesTextTest()
     {
-        _messageText.Text = "test2";
-        Console.WriteLine(_messageText.Text);
+        // arrange
+        const string expected = "test";
+        
+        // act
+        _messageText.Text = expected;
+        
+        // assert
+        Assert.Equal(expected, _messageText.Text);
     }
     
-    [Test]
+    [Fact]
     public void SetMessagesSenderTest()
     {
-        _messageText.Sender = _user;
-        Console.WriteLine(_messageText.Sender);
+        // arrange
+        const string expected = "test";
+        
+        // act
+        _messageText.Sender.Username = expected;
+        
+        // assert
+        Assert.Equal(expected, _messageText.Sender.Username);
     }
     
-    [Test]
+    [Fact]
     public void SetMessagesDateTest()
     {
-        _messageText.TimeStamp = new DateTime().Date;
-        Console.WriteLine(_messageText.TimeStamp);
+        // arrange
+        DateTime expected = new();
+        
+        // act
+        _messageText.TimeStamp = expected;
+        
+        // assert
+        Assert.Equal(expected, _messageText.TimeStamp);
     }
     
-    [Test]
+    [Fact]
     public void SetMessagesIsSentTest()
     {
-        _messageText.IsSent = true;
-        Console.WriteLine(_messageText.IsSent);
+        // arrange
+        const bool expected = true;
+        
+        // act
+        _messageText.IsSent = expected;
+        
+        // assert
+        Assert.Equal(expected, _messageText.IsSent);
     }
     
-    [Test]
+    [Fact]
     public void SetMessagesId()
     {
-        _messageText.Id = 2;
-        Console.WriteLine(_messageText.Id);
+        // arrange
+        const int expected = 1;
+        
+        // act
+        _messageText.Id = expected;
+        
+        // assert
+        Assert.Equal(expected, _messageText.Id);
     }
     
     

@@ -5,19 +5,34 @@ namespace Byt9_10.tests.ModelsTests;
 /// <summary>
 /// Tests for the Definition class
 /// </summary>
+[Trait("ModelTests", "Unit")]
 public class DefinitionTests
 {
-    private Definition _definition = new ("test", new List<string>());
+    private readonly Definition _definition = new ("test", new List<string>());
     
-    [Test]
+    [Fact]
     public void GetDefinitionPhraseTest()
     {
-        Console.WriteLine(_definition.Phrase);
+        // arrange
+        const string expected = "test";
+
+        // act
+        var actual = _definition.Phrase;
+
+        // assert
+        Assert.Equal(expected, actual);
     }
     
-    [Test]
+    [Fact]
     public void GetDefinitionMeaningsTest()
     {
-        Console.WriteLine(_definition.Meanings);
+        // arrange
+        List<string> expected = new();
+
+        // act
+        var actual = _definition.Meanings;
+
+        // assert
+        Assert.Equal(expected, actual);
     }
 }
