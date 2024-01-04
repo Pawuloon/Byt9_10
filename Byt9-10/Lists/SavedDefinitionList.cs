@@ -9,11 +9,13 @@ namespace Byt9_10.Lists;
 public class SavedDefinitionList : ISavedList
 {
     public int Id { get; set; }
-    public List<Definition> Definitions{ get; set;}
+    public User Owner { get; set; }
+    public ICollection<Definition> Definitions{ get; set;}
 
-    public SavedDefinitionList(int id, List<Definition> definitions)
+    public SavedDefinitionList(int id, User owner, ICollection<Definition> definitions)
     {
         Id = id;
+        Owner = owner;
         Definitions = definitions;
     }
 

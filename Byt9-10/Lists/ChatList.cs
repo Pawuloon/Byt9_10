@@ -10,11 +10,13 @@ public class ChatList : ISavedList
 {
    
     public int Id { get; set; }
-    public List<Conversation> Conversations { get; set; }
+    public User Owner { get; set; }
+    public ICollection<Conversation> Conversations { get; set; }
 
-    public ChatList(int id, List<Conversation> conversations)
+    public ChatList(int id, User owner, ICollection<Conversation> conversations)
     {
         Id = id;
+        Owner = owner;
         Conversations = conversations;
     }
 

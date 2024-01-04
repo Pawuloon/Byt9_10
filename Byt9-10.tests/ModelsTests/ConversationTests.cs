@@ -1,4 +1,5 @@
-﻿using Byt9_10.Messages;
+﻿using Byt9_10.Lists;
+using Byt9_10.Messages;
 using Byt9_10.Models;
 
 namespace Byt9_10.tests.ModelsTests;
@@ -10,8 +11,11 @@ namespace Byt9_10.tests.ModelsTests;
 public class ConversationTests
 {
     private readonly Conversation _conversation = new(1,
-        new List<MessageText>(),
-        new List<MessageVoice>());
+    new List<MessageText>(),
+    new  List<MessageVoice>(),
+    new List<User>(),
+    new List<ChatList>()
+    );
     
     [Fact]
     public void GetConversationIdTest()

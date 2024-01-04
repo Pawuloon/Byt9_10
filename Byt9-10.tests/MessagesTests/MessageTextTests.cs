@@ -1,4 +1,5 @@
-﻿using Byt9_10.Lists;
+﻿using Byt9_10.Interfaces;
+using Byt9_10.Lists;
 using Byt9_10.Messages;
 using Byt9_10.Models;
 
@@ -10,11 +11,9 @@ namespace Byt9_10.tests.MessagesTests;
 [Trait("MessageTests", "Unit")]
 public class MessageTextTests
 {
-    private static readonly User User = new ("test", "test", "test", 
-        new SavedDefinitionList(1, new List<Definition>()), 
-        new FriendsList(1), 
-        new ChatList(1, new List<Conversation>()));
-    
+    private static readonly User User = new ("test", "test", "test",
+        new List<ISavedList>(), 
+        new List<Conversation>());
     private readonly MessageText _messageText = new(1, User, new DateTime().Date, true, "test");
     
     [Fact]

@@ -1,3 +1,4 @@
+using Byt9_10.Interfaces;
 using Byt9_10.Lists;
 using Byt9_10.Models;
 
@@ -9,7 +10,9 @@ namespace Byt9_10.tests.ListsTests;
 [Trait("ListTests", "Unit")]
 public class SavedDefinitionTests
 {
-    private readonly SavedDefinitionList _savedDefinitionList = new(1, new List<Definition>());
+    private readonly SavedDefinitionList _savedDefinitionList = new(1, 
+        new User("test", "test", "test", new List<ISavedList>(), new List<Conversation>()),
+        new List<Definition>());
     
     [Fact]
     public void GetSavedDefinitionListIdTest()

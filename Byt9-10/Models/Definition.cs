@@ -3,9 +3,9 @@
 public class Definition
 {
     public string Phrase { get; set; }
-    public List<string> Meanings { get; set; }
+    public ICollection<string> Meanings { get; set; }
 
-    public Definition(string phrase, List<string> meanings)
+    public Definition(string phrase, ICollection<string> meanings)
     {
         Phrase = phrase;
         Meanings = meanings;

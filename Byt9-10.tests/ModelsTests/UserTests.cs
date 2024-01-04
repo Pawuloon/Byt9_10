@@ -1,4 +1,5 @@
-﻿using Byt9_10.Lists;
+﻿using Byt9_10.Interfaces;
+using Byt9_10.Lists;
 using Byt9_10.Models;
 
 
@@ -13,9 +14,7 @@ public class UserTests
 {
 
     private readonly User _user = new("test", "test", "test",
-        new SavedDefinitionList(1, new List<Definition>()),
-        new FriendsList(1),
-        new ChatList(1, new List<Conversation>()));
+        new List<ISavedList>(), new List<Conversation>());
 
     [Fact]
     public void GetUsernameTest()
@@ -54,45 +53,35 @@ public class UserTests
         // assert
         Assert.Equal(expected, actual);
     }
-    
+
     [Fact]
-    public void GetDefinitionListTest()
+    public void GetConversationListTest()
     {
+        
         // arrange
-        SavedDefinitionList expected = new(1, new List<Definition>());
+        List<Conversation> expected = new();
 
         // act
-        var actual = _user.DefinitionList;
+        var actual = _user.Conversations;
 
         // assert
-        Assert.NotEqual(expected, actual);
+        Assert.Equal(expected, actual);
     }
     
     [Fact]
-    public void GetFriendsListTest()
+    public void GetSavedListsTest()
     {
         // arrange
-        FriendsList expected = new(1);
+        List<ISavedList> expected = new();
 
         // act
-        var actual = _user.FriendsList;
+        var actual = _user.SavedLists;
 
         // assert
-        Assert.NotEqual(expected, actual);
+        Assert.Equal(expected, actual);
     }
     
-    [Fact]
-    public void GetChatListTest()
-    {
-        // arrange
-        ChatList expected = new(1, new List<Conversation>());
-
-        // act
-        var actual = _user.ChatList;
-
-        // assert
-        Assert.NotEqual(expected, actual);
-    }
+    
     
     [Fact]
     public void SetUsernameTest()
@@ -137,44 +126,16 @@ public class UserTests
     }
     
     [Fact]
-    public void SetDefinitionListTest()
+    public void SetConversationListTest()
     {
         // arrange
-        SavedDefinitionList expected = new(2, new List<Definition>());
+        List<Conversation> expected = new();
 
         // act
-        _user.DefinitionList = new SavedDefinitionList(2, new List<Definition>());
-        var actual = _user.DefinitionList;
+        _user.Conversations = new List<Conversation>();
+        var actual = _user.Conversations;
 
         // assert
-        Assert.NotEqual(expected, actual);
-    }
-    
-    [Fact]
-    public void SetFriendsListTest()
-    {
-        // arrange
-        FriendsList expected = new(2);
-
-        // act
-        _user.FriendsList = new FriendsList(2);
-        var actual = _user.FriendsList;
-
-        // assert
-        Assert.NotEqual(expected, actual);
-    }
-    
-    [Fact]
-    public void SetChatListTest()
-    {
-        // arrange
-        ChatList expected = new(2, new List<Conversation>());
-
-        // act
-        _user.ChatList = new ChatList(2, new List<Conversation>());
-        var actual = _user.ChatList;
-
-        // assert
-        Assert.NotEqual(expected, actual);
+        Assert.Equal(expected, actual);
     }
 }

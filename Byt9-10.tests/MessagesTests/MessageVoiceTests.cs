@@ -1,4 +1,5 @@
-﻿using Byt9_10.Lists;
+﻿using Byt9_10.Interfaces;
+using Byt9_10.Lists;
 using Byt9_10.Messages;
 using Byt9_10.Models;
 
@@ -12,9 +13,7 @@ public class MessageVoiceTests
 {
     private readonly MessageVoice _messageVoice = new(1, 
         new User("test", "test", "test",
-            new SavedDefinitionList(1, new List<Definition>()),
-            new FriendsList(1),
-            new ChatList(1, new List<Conversation>())), 
+            new List<ISavedList>(), new List<Conversation>()),
         new DateTime(), true, "test");
     
     [Fact]
